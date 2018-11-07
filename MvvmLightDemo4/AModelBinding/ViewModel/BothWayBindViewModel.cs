@@ -15,7 +15,7 @@ namespace MvvmLightDemo4.AModelBinding.ViewModel
         private UserInfoModel userInfo;
         public UserInfoModel UserInfo
         {
-            get { return UserInfo; }
+            get { return userInfo; }
             set { userInfo = value;RaisePropertyChanged(()=>UserInfo); }
 
         }
@@ -24,6 +24,7 @@ namespace MvvmLightDemo4.AModelBinding.ViewModel
 
         {
             UserInfo = new UserInfoModel();
+            UserInfo.UserName = "york";
         }
 
     }
