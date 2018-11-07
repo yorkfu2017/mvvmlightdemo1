@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLightDemo4", "MvvmLightDemo4\MvvmLightDemo4.csproj", "{FD6E4DB4-FF46-4224-A8A8-D700E9A83E97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD6E4DB4-FF46-4224-A8A8-D700E9A83E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6E4DB4-FF46-4224-A8A8-D700E9A83E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6E4DB4-FF46-4224-A8A8-D700E9A83E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6E4DB4-FF46-4224-A8A8-D700E9A83E97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93E506C0-EB3C-4D86-A390-46A8174DCA98}
+	EndGlobalSection
+EndGlobal
