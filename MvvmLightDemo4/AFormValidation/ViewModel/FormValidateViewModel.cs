@@ -5,11 +5,11 @@ using System.Text;
 using GalaSoft.MvvmLight;
 using MvvmLightDemo4.Model;
 using System.Threading.Tasks;
-using MvvmLightDemo4.AModelBinding.Model;
+using MvvmLightDemo4.AFormValidation.Model;
 namespace MvvmLightDemo4.AFormValidation.ViewModel
 {
     
-    public class BothWayBindViewModel : ViewModelBase
+    public class FormValidateViewModel : ViewModelBase
     {
         #region 属性
         private UserInfoModel userInfo;
@@ -20,11 +20,11 @@ namespace MvvmLightDemo4.AFormValidation.ViewModel
 
         }
         #endregion
-        public BothWayBindViewModel()
+        public FormValidateViewModel()
 
         {
             UserInfo = new UserInfoModel();
-            UserInfo.UserName = "york";
+            //UserInfo.UserName = "york";
         }
 
     }

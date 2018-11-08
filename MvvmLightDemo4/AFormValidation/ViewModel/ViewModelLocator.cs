@@ -44,9 +44,19 @@ namespace MvvmLightDemo4.AFormValidation.ViewModel
             ////    // Create run time view services and models
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
-            SimpleIoc.Default.Register<BothWayBindViewModel>();
+         
+            SimpleIoc.Default.Register<FormValidationTotal3ViewModel>();
+            SimpleIoc.Default.Register<FormValidateViewModel>();
             SimpleIoc.Default.Register<MainViewModel>();
           
+        }
+        public FormValidationTotal3ViewModel VFormValidationTotal3ViewModel
+        {
+            
+            get
+            {
+                return ServiceLocator.Current.GetInstance<FormValidationTotal3ViewModel>();
+            }
         }
 
         public MainViewModel Main
@@ -57,11 +67,11 @@ namespace MvvmLightDemo4.AFormValidation.ViewModel
             }
         }
       
-       public BothWayBindViewModel BothWayBind
+       public FormValidateViewModel formValidateViewModel
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<BothWayBindViewModel>();
+                return ServiceLocator.Current.GetInstance<FormValidateViewModel>();
             }
         }
         

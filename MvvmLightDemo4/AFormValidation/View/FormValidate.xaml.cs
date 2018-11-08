@@ -9,17 +9,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MvvmLightDemo4.AFormValidation.UC
+namespace MvvmLightDemo4.AFormValidation.View
 {
     /// <summary>
-    /// Page1.xaml 的交互逻辑
+    /// FormValidate.xaml 的交互逻辑
     /// </summary>
-    public partial class Page1 : Page
+    public partial class FormValidate : Window
     {
-        public Page1()
+        public FormValidate()
         {
             InitializeComponent();
         }

@@ -29,6 +29,9 @@
         <Button x:Name="button1" Background="LightBlue" Content="WelcomeDemo" BorderBrush="AliceBlue" Margin="30,10,10,10" Click="button1_Click"></Button>
 
         <Button x:Name="button_BothWayBingding" Background="LightBlue" Content="BothWayBingding" BorderBrush="AliceBlue" Margin="30,10,10,10" Click="button1_BothWayBingding" Grid.Column="1"></Button>
+
+        <Button x:Name="button_FormValidation" Background="LightBlue" Content="FormValidation" BorderBrush="AliceBlue" Margin="30,10,10,10" Click="button1_FormValidation" Grid.Column="2" Grid.Row="0"></Button>
+        <Button x:Name="button_" Background="LightBlue" Content="" BorderBrush="AliceBlue" Margin="30,10,10,10" Click="button1_BothWayBingding" Grid.Column="3" Grid.Row="0"></Button>
     </Grid>
 
 </Window>

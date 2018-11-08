@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MvvmLightDemo4.View;
 using MvvmLightDemo4.AModelBinding.Model;
 using MvvmLightDemo4.AModelBinding.View;
+using MvvmLightDemo4.AFormValidation.View;
 
 namespace MvvmLightDemo4
 {
@@ -37,6 +38,12 @@ namespace MvvmLightDemo4
         {
             BothWayBindingView bothWayBindingView = new BothWayBindingView();
             bothWayBindingView.Show();
+        }
+
+        private void button1_FormValidation(object sender, RoutedEventArgs e)
+        {
+            FormValidate formvalidate = new FormValidate();
+            formvalidate.Show();
         }
     }
 }

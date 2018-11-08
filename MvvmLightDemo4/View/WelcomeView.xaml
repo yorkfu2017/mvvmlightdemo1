@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="WelcomeView" Height="450" Width="600">
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" DataContext="{ Binding Source ={StaticResource Locator},Path=welcomeviewmodel }">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  DataContext="{ Binding Source ={StaticResource Locator},Path=welcomeviewmodel }">
             
                 <TextBlock Background="LightCyan" Width="200" Height="50"  Text="{Binding Welcome.Introduction}" FontSize="30"/>
         </StackPanel>

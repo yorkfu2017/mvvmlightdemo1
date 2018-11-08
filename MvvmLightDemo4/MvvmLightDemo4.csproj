@@ -44,6 +44,7 @@
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.1.1.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
@@ -65,15 +66,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AFormValidation\Common\ValidateModelBase.cs" />
+    <Compile Include="AFormValidation\Model\FormValidationTotal3Model.cs" />
     <Compile Include="AFormValidation\Model\UserInfoModel.cs" />
-    <Compile Include="AFormValidation\UC\Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AFormValidation\ViewModel\BothWayBindViewModel.cs" />
+    <Compile Include="AFormValidation\ViewModel\FormValidateViewModel.cs" />
+    <Compile Include="AFormValidation\ViewModel\FormValidationTotal3ViewModel.cs" />
     <Compile Include="AFormValidation\ViewModel\MainViewModel.cs" />
     <Compile Include="AFormValidation\ViewModel\ViewModelLocator.cs" />
-    <Compile Include="AFormValidation\View\BothWayBindingView.xaml.cs">
-      <DependentUpon>BothWayBindingView.xaml</DependentUpon>
+    <Compile Include="AFormValidation\View\FormValidate.xaml.cs">
+      <DependentUpon>FormValidate.xaml</DependentUpon>
     </Compile>
     <Compile Include="AModelBinding\Model\UserInfoModel.cs" />
     <Compile Include="AModelBinding\ViewModel\BothWayBindViewModel.cs" />
@@ -97,9 +98,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AFormValidation\View\BothWayBindingView.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="AFormValidation\View\FormValidate.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AModelBinding\View\BothWayBindingView.xaml">
       <SubType>Designer</SubType>

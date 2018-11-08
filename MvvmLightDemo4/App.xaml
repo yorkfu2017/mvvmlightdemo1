@@ -13,7 +13,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
 
-                <ResourceDictionary Source="/MVVMLightDemo;AFormValidation/UC/UC_TextBoxBase.xaml" />
+                <ResourceDictionary Source="/MVVMLightDemo4;component/AFormValidation/UC/UC_TextBoxBase.xaml" />
             
             </ResourceDictionary.MergedDictionaries>
 

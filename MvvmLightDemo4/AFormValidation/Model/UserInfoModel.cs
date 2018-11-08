@@ -5,13 +5,22 @@ using System.Text;
 using GalaSoft;
 using GalaSoft.MvvmLight;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
+using System.Runtime;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using MVVMLightDemo4.AfromValidation.Common;
+
+
+
 namespace MvvmLightDemo4.AFormValidation.Model
 {
-  public  class UserInfoModel:ObservableObject
-    {
-
+  public  class UserInfoModel : ValidateModelBase
+    { 
         private string userName;
-
+        [@RequiredAttribute]
+        //[Required]
+       
         public string UserName
         {
             get { return userName; }
@@ -40,10 +49,6 @@ namespace MvvmLightDemo4.AFormValidation.Model
             set { userAdd = value; RaisePropertyChanged(() => UserAdd); }
         }
 
-
-
-
-
-
+       
     }
 }
