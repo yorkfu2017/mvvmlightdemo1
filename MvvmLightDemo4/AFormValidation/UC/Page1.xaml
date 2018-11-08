@@ -1,0 +1,96 @@
+﻿<Page 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+  xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Resources>
+
+        <x:Array Type="{x:Type sys:String}" x:Key="MyData">
+            <sys:String>One</sys:String>
+            <sys:String>Two</sys:String>
+            <sys:String>Three</sys:String>
+            <sys:String>Four</sys:String>
+            <sys:String>Five</sys:String>
+            <sys:String>Six</sys:String>
+            <sys:String>Seven</sys:String>
+            <sys:String>Eight</sys:String>
+        </x:Array>
+
+    </Page.Resources>
+
+    <ListBox ItemsSource="{Binding Source={StaticResource MyData}}" Name="ListBoxA">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <DataTemplate.Triggers>
+
+                    <!-- selected (Grow) -->
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Value="True" Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}}" />
+                            <Condition Value="1"  Binding="{Binding Path=SelectedItems.Count,  RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" />
+                        </MultiDataTrigger.Conditions>
+                        <MultiDataTrigger.EnterActions>
+                            <BeginStoryboard Name="BeginStoryboardSelected">
+                                <Storyboard>
+                                    <ParallelTimeline>
+                                        <DoubleAnimation To="2" DecelerationRatio="0.5" Duration="00:00:00.500" Storyboard.TargetName="MyTransform" Storyboard.TargetProperty="ScaleX"  />
+                                        <DoubleAnimation To="2" DecelerationRatio="0.5" Duration="00:00:00.500" Storyboard.TargetName="MyTransform" Storyboard.TargetProperty="ScaleY"  />
+                                    </ParallelTimeline>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </MultiDataTrigger.EnterActions>
+                    </MultiDataTrigger>
+
+                    <!-- none selected -->
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Value="False" Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}}" />
+                            <Condition Value="0"  Binding="{Binding Path=SelectedItems.Count,  RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" />
+                        </MultiDataTrigger.Conditions>
+                        <MultiDataTrigger.EnterActions>
+                            <BeginStoryboard Name="BeginStoryboardNoneSelected">
+                                <Storyboard>
+                                    <ParallelTimeline>
+                                        <DoubleAnimation To="1" DecelerationRatio="0.5" Duration="00:00:00.500" Storyboard.TargetName="MyTransform" Storyboard.TargetProperty="ScaleX"  />
+                                        <DoubleAnimation To="1" DecelerationRatio="0.5" Duration="00:00:00.500" Storyboard.TargetName="MyTransform" Storyboard.TargetProperty="ScaleY"  />
+                                    </ParallelTimeline>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </MultiDataTrigger.EnterActions>
+                    </MultiDataTrigger>
+
+                    <!-- shrink -->
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Value="False" Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}}" />
+                            <Condition Value="1"  Binding="{Binding Path=SelectedItems.Count, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" />
+                        </MultiDataTrigger.Conditions>
+                        <MultiDataTrigger.EnterActions>
+                            <BeginStoryboard Name="BeginStoryboardNotSelected">
+                                <Storyboard>
+                                    <ParallelTimeline>
+                                        <DoubleAnimation To=".5" DecelerationRatio="0.5" Duration="00:00:00.500" Storyboard.TargetName="MyTransform" Storyboard.TargetProperty="ScaleX"  />
+                                        <DoubleAnimation To=".5" DecelerationRatio="0.5" Duration="00:00:00.500" Storyboard.TargetName="MyTransform" Storyboard.TargetProperty="ScaleY"  />
+                                    </ParallelTimeline>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </MultiDataTrigger.EnterActions>
+                    </MultiDataTrigger>
+
+                </DataTemplate.Triggers>
+
+                <!-- debug content -->
+                <UniformGrid Columns="3">
+                    <TextBlock Text="{Binding Path=SelectedItems.Count, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}, StringFormat={} SelectedItems.Count is {0}}" Margin="0,0,10,0" Foreground="Gray" />
+                    <TextBlock Text="{Binding Path=IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, StringFormat={} ListBoxItem.IsSelected is {0}}" Margin="0,0,10,0" Foreground="Gray" />
+                    <TextBlock Text="{Binding .}">
+                        <TextBlock.LayoutTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1" x:Name="MyTransform"/>
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </UniformGrid>
+
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+
+</Page>

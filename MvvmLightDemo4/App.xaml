@@ -7,7 +7,25 @@
              d1p1:Ignorable="d" 
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
   <Application.Resources>
-    <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:MvvmLightDemo4.ViewModel" />
-    <vmAModelBinding:ViewModelLocator x:Key="Locator_AModelBinding" d:IsDataSource="True" xmlns:vmAModelBinding="clr-namespace:MvvmLightDemo4.AModelBinding.ViewModel" />
+
+
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="/MVVMLightDemo;AFormValidation/UC/UC_TextBoxBase.xaml" />
+            
+            </ResourceDictionary.MergedDictionaries>
+
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:MvvmLightDemo4.ViewModel" />
+            <vmAModelBinding:ViewModelLocator x:Key="Locator_AModelBinding" d:IsDataSource="True" xmlns:vmAModelBinding="clr-namespace:MvvmLightDemo4.AModelBinding.ViewModel" />
+            <vmAFormValidation:ViewModelLocator x:Key="Locator_AFormValidation" d:IsDataSource="True" xmlns:vmAFormValidation="clr-namespace:MvvmLightDemo4.AFormValidation.ViewModel" />
+
+        </ResourceDictionary>
+
+
+
+
+       
     </Application.Resources>
 </Application>
