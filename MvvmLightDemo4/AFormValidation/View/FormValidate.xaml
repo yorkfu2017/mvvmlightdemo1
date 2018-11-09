@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MvvmLightDemo4.AFormValidation.View"
+        xmlns:ValidateRuleAssembly="clr-namespace:MvvmLightDemo4.AFormValidation.Common"
         mc:Ignorable="d"
         Title="FormValidate" Height="600" Width="600">
     <Grid>
@@ -17,27 +18,25 @@
                         <TextBlock Text="姓名" Width="100" Height="30"  Margin="5" Background="LightCoral" ></TextBlock>
                         <!--<TextBox  Width="200" Height=" 30" Background="LightCoral" Margin="10"  
                           Text="{Binding  Path=UserInfo.UserName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
-                FontSize="20" ></TextBox>-->
+                FontSize="20" ></TextBox> -->
                         <TextBox  Width="200" Height=" 30" Background="LightCoral" Margin="10"  FontSize="20" >
                             <TextBox.Text>
-                                <Binding Path="UserInfo.UserName"  UpdateSourceTrigger="PropertyChanged"></Binding>
+                                <Binding Path="UserInfo.UserName"  UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"></Binding>
                             </TextBox.Text>   
                         </TextBox>
                     </StackPanel>
                 </GroupBox>
 
                 <GroupBox  Width="600" Height="180" Header="三种验证模式之Exception验证"  
-                           DataContext="{ Binding Source ={StaticResource Locator_AFormValidation},Path=VFormValidationTotal3ViewModel }">
-                    <StackPanel Background="Azure" Orientation="Horizontal"   Width="590" Height="150"  >
+                           >
+                    <StackPanel Background="Azure" Orientation="Horizontal"   Width="590" Height="150" 
+                                DataContext="{ Binding Source ={StaticResource Locator_AFormValidation},Path=VFormValidationTotal3ViewModel }" >
 
                         <TextBlock Text="姓名" Width="100" Height="30"  Margin="5" Background="LightCoral" ></TextBlock>
-                        <!--<TextBox  Width="200" Height=" 30" Background="LightCoral" Margin="10"  
-                          Text="{Binding  VformValidateViewModel.Name ,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" 
-                FontSize="20" ></TextBox>-->
                         <TextBox  Width="200" Height=" 30" Background="LightCoral" Margin="10" x:Name="UserNameEx" >
 
                             <TextBox.Text>
-                                <Binding Path= "VformValidationTotal3Model/Name"  UpdateSourceTrigger ="PropertyChanged"  >
+                                <Binding Path= "VformValidationTotal3Model.Name"  UpdateSourceTrigger ="PropertyChanged"   >
                                     <Binding.ValidationRules>
                                         <ExceptionValidationRule></ExceptionValidationRule>
                                     </Binding.ValidationRules>
@@ -46,12 +45,29 @@
                         </TextBox>
                     </StackPanel>
                 </GroupBox>
-                
-                
-                <GroupBox  Width="600" Height="180" Header="初始认识demo">
-                    <StackPanel Background="LightGray" Orientation="Horizontal"   Width="590" Height="150"  >
 
+
+                <GroupBox  Width="600" Height="180" Header="三种验证模式之ValidationRule 验证">
+                    <StackPanel Background="LightGray" Orientation="Horizontal"   Width="590" Height="150"
+                                DataContext="{ Binding Source ={StaticResource Locator_AFormValidation},Path=VFormValidationTotal3ViewModel }">
+                        <TextBlock Text="姓名" Width="100" Height="30"  Margin="5" Background="LightCoral" ></TextBlock>
+                        <TextBlock Width="100" Height="30" Background="LightCoral" Margin="8" Text="{Binding Path=VformValidationTotal3Model.Name1, Mode=OneWay}"></TextBlock>
+                        <!--<TextBox  Width="200" Height=" 30" Background="LightCoral" Margin="10"  
+                          Text="{Binding  VformValidateViewModel.Name ,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" 
+                FontSize="20" ></TextBox>-->
+                        <TextBox  Width="200" Height=" 30" Background="LightCoral" Margin="10" >
+
+                            <TextBox.Text>
+                                <Binding Path= "VformValidationTotal3Model.Name1"  UpdateSourceTrigger ="PropertyChanged"  Mode="TwoWay"  >
+                                    <Binding.ValidationRules>
+                                        <ValidateRuleAssembly:RequiredRule/>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                       
                     </StackPanel>
+                    
                 </GroupBox>
 
 

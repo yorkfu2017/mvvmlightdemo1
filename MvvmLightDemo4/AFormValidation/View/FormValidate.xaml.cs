@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MVVMLightDemo4.AfromValidation.Common;
 
 namespace MvvmLightDemo4.AFormValidation.View
 {
@@ -21,6 +22,8 @@ namespace MvvmLightDemo4.AFormValidation.View
         public FormValidate()
         {
             InitializeComponent();
+            
+            
         }
     }
 }

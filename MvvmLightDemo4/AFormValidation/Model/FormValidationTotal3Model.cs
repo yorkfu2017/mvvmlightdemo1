@@ -32,6 +32,19 @@ namespace MvvmLightDemo4.AFormValidation.Model
                 }
             }
         }
+
+        private string name1;
+
+        public string Name1
+        {
+            get { return name1; }
+            set
+            {
+
+                name1 = value; RaisePropertyChanged(() => Name1);
+             
+            }
+        }
         private Int64 phone;
 
         public Int64 Phone
